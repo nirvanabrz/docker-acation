@@ -10,17 +10,21 @@ inputs:
 #   time: # id of output
 #     description: 'The time we greeted you'
 runs:
-  # using: 'docker'
-  # image: 'Dockerfile'
-  using: "composite"
-  steps:
-  - name: "Build Image docker"
-    run: |
-      cd $GITHUB_ACTION_PATH
-      docker build -t docker-action:latest  . 
-    shell: bash
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - "qualquercoisa"
+    - "qualquercoisa2"
+
+  # using: "composite"
+  # steps:
+  # - name: "Build Image docker"
+  #   run: |
+  #     cd $GITHUB_ACTION_PATH
+  #     docker build -t docker-action:latest  . 
+  #   shell: bash
   
-  - name: "Run Image docker"
-    run: |
-      docker run ${{ inputs.docker-run-options }} docker-action:latest
-    shell: bash
+  # - name: "Run Image docker"
+  #   run: |
+  #     docker run ${{ inputs.docker-run-options }} docker-action:latest
+  #   shell: bash
