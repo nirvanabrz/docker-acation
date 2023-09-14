@@ -22,5 +22,5 @@ runs:
   
   - name: "Run Image docker"
     run: |
-      docker run ${{ inputs.detach }} docker-action:latest
+      docker run ${{ inputs.detach }}docker-action:latest
     shell: bash
