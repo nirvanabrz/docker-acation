@@ -23,10 +23,10 @@ runs:
   - name: "Build Image docker"
     run: |
       cd $GITHUB_ACTION_PATH
-      docker build -t docker-action:latest "qualquer coisa" "qualquercoisa2" . 
+      docker build -t docker-action:latest . 
     shell: bash
   
-  # - name: "Run Image docker"
-  #   run: |
-  #     docker run ${{ inputs.docker-run-options }} docker-action:latest
-  #   shell: bash
+  - name: "Run Image docker"
+    run: |
+      docker run ${{ inputs.docker-run-options }} docker-action:latest "qualquer coisa" "qualquercoisa2"
+    shell: bash
