@@ -11,10 +11,13 @@ runs:
   steps:
   - name: "Build Image docker"
     run: |
-      cat ./Dockerfile
+      ls -lia $GITHUB_ACTION_PATH
+      cat  "$GITHUB_ACTION_PATH/Dockerfile"
       docker --version
-      docker build -t docker-action:latest .
+      docker build -t docker-action:latest -f "$GITHUB_ACTION_PATH/Dockerfile"
+  
     shell: bash
+  
   - name: "Run Image docker"
     run: |
       docker run -d docker-action:latest
