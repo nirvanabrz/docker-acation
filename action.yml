@@ -1,7 +1,7 @@
 name: 'teste docker'
 description: 'teste docker'
 inputs:
-  detach:
+  docker-options:
     description: "Faz o de detach do run do container"
     default: ""
     required: false
@@ -22,5 +22,5 @@ runs:
   
   - name: "Run Image docker"
     run: |
-      docker run ${{ inputs.detach }} docker-action:latest
+      docker run ${{ inputs.docker-options }} docker-action:latest
     shell: bash
