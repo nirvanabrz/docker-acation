@@ -1,8 +1,8 @@
 name: 'teste docker'
 description: 'teste docker'
 inputs:
-  docker-options:
-    description: "Faz o de detach do run do container"
+  docker-run-options:
+    description: "Paramentros para o docker Run"
     default: ""
     required: false
 
