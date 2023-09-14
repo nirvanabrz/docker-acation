@@ -1,5 +1,10 @@
 name: 'teste docker'
 description: 'teste docker'
+inputs:
+  detach:
+    description: "Faz o de detach do run do container"
+    default: ""
+    required: false
 
 # outputs:
 #   time: # id of output
@@ -12,14 +17,10 @@ runs:
   - name: "Build Image docker"
     run: |
       cd $GITHUB_ACTION_PATH
-      
-      cat Dockerfile
-      docker --version
-      docker build -t docker-action:latest  .
-  
+      docker build -t docker-action:latest  . 
     shell: bash
   
   - name: "Run Image docker"
     run: |
-      docker run -d docker-action:latest
+      docker run ${{ inputs.detach }} docker-action:latest
     shell: bash
