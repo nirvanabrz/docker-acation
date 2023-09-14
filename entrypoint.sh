@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-sleep 15
+echo "passou por aqui"
