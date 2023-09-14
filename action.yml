@@ -11,6 +11,8 @@ runs:
   steps:
   - name: "Build Image docker"
     run: |
+      cat ./Dockerfile
+      docker --version
       docker build -t docker-action:latest .
     shell: bash
   - name: "Run Image docker"
